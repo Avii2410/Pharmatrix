@@ -1,0 +1,203 @@
+.sidebar {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: var(--sidebar-bg);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+  box-shadow: 4px 0 24px rgba(0,0,0,0.1);
+}
+
+.sidebar-header {
+  padding: 2.25rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo-icon {
+  background: linear-gradient(135deg, var(--primary-blue), #60a5fa);
+  padding: 0.6rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 16px rgba(37, 99, 235, 0.3);
+}
+
+.logo-text {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.04em;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+  overflow-y: auto;
+}
+
+.sidebar-nav ul {
+  list-style: none;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1.5rem;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all var(--transition-normal);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.nav-link.active {
+  color: white;
+  background: rgba(37, 99, 235, 0.15);
+}
+
+.nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 4px;
+  background: var(--primary-blue);
+  border-radius: 0 4px 4px 0;
+}
+
+.nav-icon {
+  flex-shrink: 0;
+  opacity: 0.85; /* Increased from 0.7 */
+}
+
+.nav-link.active .nav-icon {
+  color: #60a5fa; /* Lighter blue for better contrast on dark slate */
+  opacity: 1;
+}
+
+.active-arrow {
+  margin-left: auto;
+  opacity: 0.8; /* Increased from 0.5 */
+}
+
+/* ── Role Badge Redesign ── */
+.sidebar-role-badge {
+  margin: 0.5rem 1.25rem 1.5rem;
+  padding-left: 1rem;
+  border-left: 2px solid transparent;
+}
+
+.role-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 99px;
+  font-size: 0.75rem;
+  font-weight: 800; /* Increased weight */
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(0.9); opacity: 0.7; }
+}
+
+/* ── Profile Footer Redesign ── */
+.sidebar-footer {
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.3); /* Slightly darker */
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1rem;
+  color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.user-info { min-width: 0; }
+
+.user-name {
+  font-weight: 700;
+  color: white;
+  font-size: 0.9375rem;
+  margin-bottom: 0.125rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.user-email {
+  font-size: 0.75rem;
+  color: #94a3b8; /* Keep slightly dimmed but readable */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 500;
+}
+
+.logout-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  padding: 0.8rem;
+  border-radius: 12px;
+  border: 1.5px solid rgba(248, 113, 113, 0.4); /* Increased border contrast */
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171; /* Lighter red for visibility on dark */
+  font-size: 0.875rem;
+  font-weight: 800; /* Bolder */
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-family: inherit;
+}
+
+.logout-btn:hover {
+  background: #dc2626;
+  color: white;
+  border-color: #dc2626;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
+}
